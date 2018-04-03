@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Primitives;
 
 public static class CustomAuthExtensions
 {
@@ -61,7 +61,7 @@ internal class CustomAuthHandler : AuthenticationHandler<CustomAuthOptions>
     }
 }
 
-public class TokenAuthenticationFilter : Attribute, IAsyncAuthorizationFilter
+public class TokenAuthenticationFilter : Attribute, IAuthorizationFilter
 {
 
     public void OnAuthorization(AuthorizationFilterContext context)
@@ -69,12 +69,15 @@ public class TokenAuthenticationFilter : Attribute, IAsyncAuthorizationFilter
         Console.WriteLine("AuthorizationAsync Filter Executed");
 
         var controllerActionDescriptor = (ControllerActionDescriptor)context.ActionDescriptor;
+
         if(controllerActionDescriptor != null)
         {
-            var isDefined = controllerActionDescriptor.MethodInfo.GetCustomAttributes(false)
-                .Any(x => x.GetType().Equals(typeof(ChenFilterAttribute)));
+            //var isDefined = controllerActionDescriptor.MethodInfo.GetCustomAttributes(true)
+            //    .Any(x => x.GetType().Equals(typeof(ChenFilterAttribute)));
+            //Console.WriteLine("isDefined Count " + controllerActionDescriptor.MethodInfo.GetCustomAttributes(typeof(ChenFilterAttribute), false).Count());
             
-            if(isDefined)
+            var isDefined = controllerActionDescriptor.MethodInfo.GetCustomAttribute(typeof(ChenFilterAttribute), false);
+            if(isDefined != null)
             {
                 return;
             }
