@@ -1,0 +1,10 @@
+/Users/chen/MyWork/Dotnet/testMVC/bin/Debug/netcoreapp2.0/testMVC.deps.json
+/Users/chen/MyWork/Dotnet/testMVC/bin/Debug/netcoreapp2.0/testMVC.runtimeconfig.json
+/Users/chen/MyWork/Dotnet/testMVC/bin/Debug/netcoreapp2.0/testMVC.runtimeconfig.dev.json
+/Users/chen/MyWork/Dotnet/testMVC/bin/Debug/netcoreapp2.0/testMVC.dll
+/Users/chen/MyWork/Dotnet/testMVC/bin/Debug/netcoreapp2.0/testMVC.pdb
+/Users/chen/MyWork/Dotnet/testMVC/obj/Debug/netcoreapp2.0/testMVC.csproj.CoreCompileInputs.cache
+/Users/chen/MyWork/Dotnet/testMVC/obj/Debug/netcoreapp2.0/testMVC.AssemblyInfoInputs.cache
+/Users/chen/MyWork/Dotnet/testMVC/obj/Debug/netcoreapp2.0/testMVC.AssemblyInfo.cs
+/Users/chen/MyWork/Dotnet/testMVC/obj/Debug/netcoreapp2.0/testMVC.dll
+/Users/chen/MyWork/Dotnet/testMVC/obj/Debug/netcoreapp2.0/testMVC.pdb
